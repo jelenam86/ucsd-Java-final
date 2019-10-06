@@ -51,14 +51,14 @@ class PokeAPITest {
 	}
 
 	@Test
-	void testFindTheShortestTime() throws JSONException, IOException {
+	void testFindTheShortestTime() throws JSONException {
 		List<JSONObject> objects = createTestList();
 		assertEquals(1, PokeAPI.findTheShortestTime(objects, "filter"));
 		assertThrows(JSONException.class, () -> PokeAPI.findTheShortestTime(objects, "hello"));
 	}
 
 	@Test
-	void testFindTheLargestBerryYouCanGrowInTheShortestTime() throws IOException {
+	void testFindTheLargestBerryYouCanGrowInTheShortestTime() {
 		List<JSONObject> objects = createTestList();
 		assertEquals(objects.get(4), PokeAPI.findTheLargestBerryYouCanGrowInTheShortestTime(objects, "filter", "size"));
 	}
