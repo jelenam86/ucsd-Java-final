@@ -47,7 +47,7 @@ public class PokeAPI {
 		return berries;
 	}
 
-	static int findTheShortestTime(List<JSONObject> berries, String filter) throws JSONException, IOException {
+	static int findTheShortestTime(List<JSONObject> berries, String filter) throws JSONException {
 		return berries
 				.stream()
 				.min(Comparator.comparingInt(berry -> berry.getInt(filter)))
@@ -55,8 +55,7 @@ public class PokeAPI {
 				.getInt(filter);
 	}
 
-	static JSONObject findTheLargestBerryYouCanGrowInTheShortestTime(List<JSONObject> berries, String filter,
-			String toCompare) throws IOException {
+	static JSONObject findTheLargestBerryYouCanGrowInTheShortestTime(List<JSONObject> berries, String filter, String toCompare) {
 		int minTime = findTheShortestTime(berries, filter);
 		return berries
 				.stream()
